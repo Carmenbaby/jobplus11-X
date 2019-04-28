@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
-from simpledu.config import configs
-from simpledu.models import db, User
+from jobplus.config import configs
+from jobplus.models import db, User
 from flask_login import LoginManager
 
 
