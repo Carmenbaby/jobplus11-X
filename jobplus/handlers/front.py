@@ -5,4 +5,4 @@ front = Blueprint('front', __name__)
 
 @front.route('/')
 def index():
-    return render_template('index.html', pagination=pagination)
+    return render_template('index.html')

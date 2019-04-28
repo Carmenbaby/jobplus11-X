@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 
-class Base(db.Model)
+class Base(db.Model):
 
     __abstract__ = True
     created_at = db.Column(db.DateTime, default=datetime.utcnow)

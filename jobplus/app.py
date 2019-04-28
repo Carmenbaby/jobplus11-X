@@ -19,8 +19,8 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
-    #from .handlers import front, course, admin, live
-    #app.register_blueprint(front)
+    from .handlers import front
+    app.register_blueprint(front)
 
 def create_app(config):
     app = Flask(__name__)
