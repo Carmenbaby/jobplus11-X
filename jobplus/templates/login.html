@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "macro.html" import render_form %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+<div class="form login">
+  <h2>login</h2>
+  {{ render_form(form, url_for('front.login')) }}
+</div>
+{% endblock %}
+
+
+
