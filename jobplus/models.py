@@ -13,7 +13,6 @@ class Base(db.Model):
                            default=datetime.utcnow,
                            onupdate=datetime.utcnow)
 
-
 user_job = db.Table(
     'user_job',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id', ondelete='CASCADE')),
@@ -55,7 +54,7 @@ class User(Base, UserMixin):
         if not self.is_company:
             raise AttributeError('User has no attribute enable_jobs')
         return self.jobs.filter(Job.is_disable.is_(False))
-
+        
     @property
     def password(self):
         return self._password
@@ -142,9 +141,10 @@ class CompanyDetail(Base):
     __tablename__ = 'company_detail'
 
     id = db.Column(db.Integer, primary_key=True)
+    location = db.Column(db.String(24), nullable=False)
     logo = db.Column(db.String(256), nullable=False)
     site = db.Column(db.String(128), nullable=False)
-    location = db.Column(db.String(24), nullable=False)
+    
     # 一句话描述
     description = db.Column(db.String(100))
     # 关于我们，公司详情描述

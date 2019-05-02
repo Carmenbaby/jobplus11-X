@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% from "macro.html" import render_form %}
+
+{% block title %}企业信息{% endblock %}
+
+{% block body %}
+<div class="form company profile">
+  <h2>企业信息</h2>
+  {{ render_form(form, url_for('company.profile')) }}
+</div>
+{% endblock %}
